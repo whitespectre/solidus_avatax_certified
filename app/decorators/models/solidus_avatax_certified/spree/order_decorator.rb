@@ -84,7 +84,7 @@ module Models
         end
 
         def logger
-          @logger ||= SolidusAvataxCertified::AvataxLog.new('Spree::Order class', 'Start order processing')
+          @logger ||= ::SolidusAvataxCertified::AvataxLog.new('Spree::Order class', 'Start order processing')
         end
 
         ::Spree::Order.prepend self

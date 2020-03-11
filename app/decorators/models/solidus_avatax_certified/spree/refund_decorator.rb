@@ -28,7 +28,7 @@ module Models
         end
 
         def logger
-          @logger ||= SolidusAvataxCertified::AvataxLog.new('Spree::Refund class', 'Start refund capture')
+          @logger ||= ::SolidusAvataxCertified::AvataxLog.new('Spree::Refund class', 'Start refund capture')
         end
 
         ::Spree::Refund.prepend self
