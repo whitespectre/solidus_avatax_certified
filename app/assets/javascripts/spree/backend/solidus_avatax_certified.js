@@ -2,4 +2,4 @@
 //= require spree/address_validator
 
 Spree.routes.use_code_search = Spree.pathFor("admin/avalara_entity_use_codes")
-Spree.routes.validate_address = Spree.pathFor("admin/avatax_settings/validate_address")
+Spree.routes.validate_address = Spree.pathFor("/checkout/validate_address")
