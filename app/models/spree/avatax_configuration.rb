@@ -7,13 +7,13 @@ class Spree::AvataxConfiguration < Spree::Preferences::Configuration
   preference :environment, :string, default: -> { default_environment }
   preference :log, :boolean, default: true
   preference :log_to_stdout, :boolean, default: false
-  preference :address_validation, :boolean, default: true
+  preference :address_validation, :boolean, default: ENV['ADDRESS_VALIDATION']
   preference :address_validation_enabled_countries, :array, default: ['United States', 'Canada']
   preference :tax_calculation, :boolean, default: true
   preference :document_commit, :boolean, default: true
   preference :origin, :string, default: '{}'
-  preference :refuse_checkout_address_validation_error, :boolean, default: false
-  preference :customer_can_validate, :boolean, default: false
+  preference :refuse_checkout_address_validation_error, :boolean, default: ENV['REFUSE_CHECKOUT_ADDRESS_VALIDATION_ERROR']
+  preference :customer_can_validate, :boolean, default: ENV['CUSTOMER_CAN_VALIDATE']
   preference :raise_exceptions, :boolean, default: false
 
   def self.boolean_preferences
