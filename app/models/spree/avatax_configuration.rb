@@ -7,7 +7,7 @@ class Spree::AvataxConfiguration < Spree::Preferences::Configuration
   preference :environment, :string, default: -> { default_environment }
   preference :log, :boolean, default: true
   preference :log_to_stdout, :boolean, default: false
-  preference :address_validation, :boolean, default: true
+  preference :address_validation, :boolean, default: false
   preference :address_validation_enabled_countries, :array, default: ['United States', 'Canada']
   preference :tax_calculation, :boolean, default: true
   preference :document_commit, :boolean, default: true
