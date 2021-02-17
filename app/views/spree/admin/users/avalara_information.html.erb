@@ -1,7 +1,7 @@
-<% content_for :page_title do %>
-<%= link_to "#{t('spree.editing_user')} #{@user.email}", edit_admin_user_url(@user) %>
-<% end %>
+<% admin_breadcrumb(link_to plural_resource_name(Spree::LegacyUser), spree.admin_users_path) %>
+<% admin_breadcrumb(@user.valid? ? @user.email : @user.email_was) %>
 
+<%= render 'spree/admin/users/tabs', current: :avalara_information %>
 <%= render :partial => 'spree/admin/users/sidebar', :locals => { :current => :account } %>
 <%= render :partial => 'spree/admin/users/user_page_actions' %>
 

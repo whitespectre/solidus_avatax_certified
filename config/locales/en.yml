@@ -39,3 +39,5 @@ en:
     save_preferences: Save Preferences
     raise_exceptions: Raise Exceptions
     avalara_information: Avalara Information
+    admin:
+      account_updated: Account successfully updated
