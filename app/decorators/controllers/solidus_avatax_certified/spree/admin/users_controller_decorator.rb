@@ -6,10 +6,8 @@ module Controllers
       module Admin
         module UsersControllerDecorator
           def avalara_information
-            if request.put?
-              if @user.update(user_params)
-                flash.now[:success] = I18n.t(:account_updated)
-              end
+            if request.put? && @user.update(user_params)
+              flash.now[:success] = I18n.t('spree.admin.account_updated')
             end
 
             render :avalara_information
