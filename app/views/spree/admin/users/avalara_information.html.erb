@@ -17,7 +17,7 @@
     <div class="alpha six columns">
       <div class="field">
         <label>Customer Code</label>
-        <input type="text" class="fullwidth" placeholder="<%= @user.id %>", readonly>
+        <input type="text" class="fullwidth" placeholder="<%= @user.dsr_id %>", readonly>
       </div>
     </div>
     <% use_codes_list = Spree::AvalaraEntityUseCode.all.map {|use_code| ["#{use_code.use_code}) #{use_code.use_code_description}", use_code.id]} %>

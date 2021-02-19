@@ -53,7 +53,7 @@ module SolidusAvataxCertified
       end
 
       def customer_code
-        order.user ? order.user.id : order.email
+        order.user ? order.user.dsr_id : order.email
       end
     end
   end
