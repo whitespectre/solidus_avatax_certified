@@ -4,7 +4,7 @@ Deface::Override.new(
   insert_bottom: 'ul.tabs',
   text: <<-ERB
     <% if can?(:display, @user) %>
-      <li<%== ' class="active"' if current == :avalara_information %>>
+      <li<%= ' class="active"' if current == :avalara_information %>>
         <%= link_to t("spree.avalara_information"), spree.avalara_information_admin_user_path(@user) %>
       </li>
     <% end %>
