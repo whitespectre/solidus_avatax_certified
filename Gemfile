@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 solidus_branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
 
 gem 'solidus', github: 'solidusio/solidus', branch: solidus_branch
+gem 'avatax-ruby', github: 'whitespectre/avatax', branch: 'adn'
+
 gem 'solidus_auth_devise'
 
 gem 'factory_bot', '~> 4.8'
