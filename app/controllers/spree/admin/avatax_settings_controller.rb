@@ -18,7 +18,7 @@ module Spree
       end
 
       def ping_my_service
-        mytax = TaxSvc.new
+        mytax = Services::TaxSvc.new
         response = mytax.ping
 
         if response.success?
