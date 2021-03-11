@@ -18,11 +18,11 @@ module SolidusAvataxCertified
       end
 
       Dir.glob(File.join(File.dirname(__FILE__), '../../app/clients/**/*.rb')).sort.each do |c|
-        Rails.configuration.cache_classes ? require(c) : load(c)
+        load(c)
       end
 
       Dir.glob(File.join(File.dirname(__FILE__), '../../app/services/**/*.rb')).sort.each do |c|
-        Rails.configuration.cache_classes ? require(c) : load(c)
+        load(c)
       end
     end
   end
