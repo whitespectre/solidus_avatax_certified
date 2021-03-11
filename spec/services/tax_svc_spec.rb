@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-RSpec.describe TaxSvc, :vcr do
-  let(:taxsvc) { TaxSvc.new }
+RSpec.describe Services::TaxSvc, :vcr do
+  let(:taxsvc) { described_class.new }
   let(:request_hash) { build(:request_hash) }
 
   describe '#get_tax' do
