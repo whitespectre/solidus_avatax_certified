@@ -12,7 +12,7 @@ module SolidusAvataxCertified
                                  result['validatedAddresses'][0]
                                else
                                  {}
-        end
+                               end
       end
 
       def messages
@@ -46,8 +46,9 @@ module SolidusAvataxCertified
       end
 
       def summary_messages
-        if error?
-          result['error']['details'].map { |m| m['message'] }
+        details = result['error'].try(:[], 'details')
+        if error? && details
+          details.map { |m| m['message'] }
         elsif failed?
           messages.map { |m| m['summary'] }
         else
