@@ -46,7 +46,7 @@ module SolidusAvataxCertified
       end
 
       def summary_messages
-        details = result['error']['details']
+        details = result['error'].try(:[], 'details')
         if error? && details
           details.map { |m| m['message'] }
         elsif failed?
