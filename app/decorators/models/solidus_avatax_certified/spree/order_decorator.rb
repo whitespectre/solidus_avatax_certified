@@ -47,7 +47,22 @@ module Models
           avatax_address = ::SolidusAvataxCertified::Address.new(self)
           response = avatax_address.validate
 
-          return response.result if response.success?
+          if response.success?
+            if ::Spree::Avatax::Config.address_validation
+              validated_address = response.result['validatedAddresses'].first
+              if validated_address.present?
+                self.ship_address_attributes = {
+                  address1: validated_address['line1'],
+                  address2: validated_address['line2'],
+                  city: validated_address['city'],
+                  zipcode: validated_address['postalCode']
+                }
+                save
+              end
+            end
+
+            return response.result
+          end
           return response if !::Spree::Avatax::Config.refuse_checkout_address_validation_error
 
           response.summary_messages.each do |msg|
