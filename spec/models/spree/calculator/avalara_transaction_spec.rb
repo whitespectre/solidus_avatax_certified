@@ -11,11 +11,11 @@ describe Spree::Calculator::AvalaraTransaction, :vcr do
 
   describe '#description' do
     it 'responds with avalara_transaction' do
-      expect(Spree::Calculator::AvalaraTransaction.new.description).to eq('Avalara Transaction Calculator')
+      expect(described_class.new.description).to eq('Avalara Transaction Calculator')
     end
   end
 
-  context '#compute', :vcr do
+  describe '#compute', :vcr do
     context 'when given an order' do
       before do
         allow(order).to receive_messages line_items: [line_item]
@@ -109,7 +109,7 @@ describe Spree::Calculator::AvalaraTransaction, :vcr do
 
     context 'when given a shipment' do
       let(:shipping_rate) { Spree::TaxRate.find_by(name: 'Shipping Tax') }
-      let(:shipping_calculator) { Spree::Calculator::AvalaraTransaction.new(calculable: shipping_rate) }
+      let(:shipping_calculator) { described_class.new(calculable: shipping_rate) }
       let(:shipment) { order.shipments.first }
 
       describe 'computing normal shipment' do
