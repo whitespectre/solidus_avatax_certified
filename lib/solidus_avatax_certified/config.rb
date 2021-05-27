@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+AVATAX_HEADERS = { 'X-Avalara-Client' => ENV["AVATAX_CLIENT_ID"] }.freeze
+
 module Spree
-  class AvataxConfiguration < Spree::Preferences::Configuration
+  class AvataxConfiguration < Preferences::Configuration
     preference :company_code, :string, default: ENV['AVATAX_COMPANY_CODE']
     preference :account, :string, default: ENV['AVATAX_ACCOUNT']
     preference :password, :string, default: ENV['AVATAX_PASSWORD']
@@ -33,5 +35,9 @@ module Spree
         Rails.env.production? ? 'production' : 'sandbox'
       end
     end
+  end
+
+  module Avatax
+    Config = AvataxConfiguration.new
   end
 end
