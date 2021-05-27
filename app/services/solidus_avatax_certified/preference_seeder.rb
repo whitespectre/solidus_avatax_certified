@@ -11,7 +11,7 @@ module SolidusAvataxCertified
         )
 
         # maintain the previous behaviour: (re)set the config to default values
-        ::Spree::Avatax::Config.reset
+        ::SolidusAvataxCertified::Config.reset
       end
     end
   end

@@ -16,7 +16,7 @@ module Models
         end
 
         def avalara_tax_enabled?
-          ::Spree::Avatax::Config.tax_calculation
+          ::SolidusAvataxCertified::Config.tax_calculation
         end
 
         def cancel_avalara
@@ -48,7 +48,7 @@ module Models
           response = avatax_address.validate
 
           if response.success?
-            if ::Spree::Avatax::Config.address_validation
+            if ::SolidusAvataxCertified::Config.address_validation
               validated_address = response.result['validatedAddresses'].first
               if validated_address.present?
                 self.ship_address_attributes = {
@@ -63,7 +63,7 @@ module Models
 
             return response.result
           end
-          return response if !::Spree::Avatax::Config.refuse_checkout_address_validation_error
+          return response if !::SolidusAvataxCertified::Config.refuse_checkout_address_validation_error
 
           response.summary_messages.each do |msg|
             errors.add(:address_validation_failure, msg)

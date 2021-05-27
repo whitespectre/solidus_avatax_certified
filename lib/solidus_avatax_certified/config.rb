@@ -2,8 +2,8 @@
 
 AVATAX_HEADERS = { 'X-Avalara-Client' => ENV["AVATAX_CLIENT_ID"] }.freeze
 
-module Spree
-  class AvataxConfiguration < Preferences::Configuration
+module SolidusAvataxCertified
+  class AvataxConfiguration < ::Spree::Preferences::Configuration
     preference :company_code, :string, default: ENV['AVATAX_COMPANY_CODE']
     preference :account, :string, default: ENV['AVATAX_ACCOUNT']
     preference :password, :string, default: ENV['AVATAX_PASSWORD']
@@ -37,7 +37,13 @@ module Spree
     end
   end
 
+  Config = AvataxConfiguration.new
+end
+
+module Spree
   module Avatax
-    Config = AvataxConfiguration.new
+    include ActiveSupport::Deprecation::DeprecatedConstantAccessor
+
+    deprecate_constant 'Config', 'SolidusAvataxCertified::Config'
   end
 end

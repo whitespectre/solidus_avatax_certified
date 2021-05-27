@@ -36,10 +36,10 @@ module Spree
       private
 
       def load_avatax_origin
-        @avatax_origin = if Spree::Avatax::Config.origin.blank?
+        @avatax_origin = if SolidusAvataxCertified::Config.origin.blank?
                            {}
                          else
-                           JSON.parse(Spree::Avatax::Config.origin)
+                           JSON.parse(SolidusAvataxCertified::Config.origin)
                          end
       end
     end

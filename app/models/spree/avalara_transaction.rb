@@ -79,11 +79,11 @@ module Spree
     end
 
     def document_committing_enabled?
-      Spree::Avatax::Config.document_commit
+      SolidusAvataxCertified::Config.document_commit
     end
 
     def tax_calculation_enabled?
-      Spree::Avatax::Config.tax_calculation
+      SolidusAvataxCertified::Config.tax_calculation
     end
 
     def logger

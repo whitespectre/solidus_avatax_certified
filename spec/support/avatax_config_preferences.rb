@@ -2,9 +2,9 @@
 
 class MyConfigPreferences
   def self.set_preferences
-    Spree::Avatax::Config.reset
+    SolidusAvataxCertified::Config.reset
 
-    Spree::Avatax::Config.configure do |config|
+    SolidusAvataxCertified::Config.configure do |config|
       config.company_code = 'DEFAULT'
       config.license_key = '12345'
       config.account = '12345'

@@ -10,7 +10,7 @@ module Models
         end
 
         def avalara_tax_enabled?
-          ::Spree::Avatax::Config.tax_calculation
+          ::SolidusAvataxCertified::Config.tax_calculation
         end
 
         def cancel_avalara

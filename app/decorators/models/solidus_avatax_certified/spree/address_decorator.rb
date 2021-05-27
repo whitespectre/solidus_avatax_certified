@@ -11,12 +11,12 @@ module Models
 
         module ClassMethods
           def validation_enabled_countries
-            ::Spree::Avatax::Config.address_validation_enabled_countries
+            ::SolidusAvataxCertified::Config.address_validation_enabled_countries
           end
         end
 
         def validation_enabled?
-          ::Spree::Avatax::Config.address_validation && country_validation_enabled?
+          ::SolidusAvataxCertified::Config.address_validation && country_validation_enabled?
         end
 
         def country_validation_enabled?

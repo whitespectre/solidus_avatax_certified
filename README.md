@@ -48,7 +48,7 @@ or, for some option, via environment variables. The defaults are shown below:
 
 ```ruby
 # config/initializers/avatax.rb
-Spree::Avatax::Config.configure do |config|
+SolidusAvataxCertified::Config.configure do |config|
   config.company_code = ENV['AVATAX_COMPANY_CODE']
   config.license_key = ENV['AVATAX_LICENSE_KEY']
   config.account = ENV['AVATAX_ACCOUNT']

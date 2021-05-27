@@ -77,7 +77,7 @@ module SolidusAvataxCertified
     end
 
     def config
-      Spree::Avatax::Config
+      SolidusAvataxCertified::Config
     end
   end
 end

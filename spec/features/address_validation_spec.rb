@@ -19,7 +19,7 @@ RSpec.describe 'Address Validation Button in Checkout', :vcr, :js do
 
   context 'Customer validate button enabled' do
     before do
-      Spree::Avatax::Config.customer_can_validate = true
+      SolidusAvataxCertified::Config.customer_can_validate = true
       prep_page
     end
 
@@ -54,7 +54,7 @@ RSpec.describe 'Address Validation Button in Checkout', :vcr, :js do
 
   context 'Customer validate button disabled' do
     it 'does not have validate button on address page' do
-      Spree::Avatax::Config.customer_can_validate = false
+      SolidusAvataxCertified::Config.customer_can_validate = false
       prep_page
       expect(page).not_to have_content('Validate Ship Address')
     end

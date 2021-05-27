@@ -79,15 +79,15 @@ module SolidusAvataxCertified
     private
 
     def tax_calculation_enabled?
-      Spree::Avatax::Config.tax_calculation
+      SolidusAvataxCertified::Config.tax_calculation
     end
 
     def raise_exceptions?
-      Spree::Avatax::Config.raise_exceptions
+      SolidusAvataxCertified::Config.raise_exceptions
     end
 
     def company_code
-      Spree::Avatax::Config.company_code
+      SolidusAvataxCertified::Config.company_code
     end
 
     def client

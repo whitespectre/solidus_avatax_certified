@@ -7,51 +7,51 @@
 <table>
   <tr>
     <th><%= t('spree.avatax_company_code') %>:</th>
-    <td><%= Spree::Avatax::Config.company_code %></td>
+    <td><%= SolidusAvataxCertified::Config.company_code %></td>
   </tr>
   <tr>
     <th><%= t('spree.avatax_license_key') %>:</th>
-    <td><%= Spree::Avatax::Config.license_key %></td>
+    <td><%= SolidusAvataxCertified::Config.license_key %></td>
   </tr>
   <tr>
     <th><%= t('spree.avatax_account') %>:</th>
-    <td><%= Spree::Avatax::Config.account %></td>
+    <td><%= SolidusAvataxCertified::Config.account %></td>
   </tr>
   <tr>
     <th><%= t('spree.enable_avatax_tax_calculation') %>:</th>
-    <td><%= Spree::Avatax::Config.tax_calculation %></td>
+    <td><%= SolidusAvataxCertified::Config.tax_calculation %></td>
   </tr>
   <tr>
     <th><%= t('spree.enable_avatax_document_committing') %>:</th>
-    <td><%= Spree::Avatax::Config.document_commit %></td>
+    <td><%= SolidusAvataxCertified::Config.document_commit %></td>
   </tr>
   <tr>
     <th><%= t('spree.log') %>:</th>
-    <td><%= Spree::Avatax::Config.log %></td>
+    <td><%= SolidusAvataxCertified::Config.log %></td>
   </tr>
   <tr>
     <th><%= t('spree.log_to_stdout') %>:</th>
-    <td><%= Spree::Avatax::Config.log_to_stdout %></td>
+    <td><%= SolidusAvataxCertified::Config.log_to_stdout %></td>
   </tr>
   <tr>
     <th><%= t('spree.raise_exceptions') %>:</th>
-    <td><%= Spree::Avatax::Config.raise_exceptions %></td>
+    <td><%= SolidusAvataxCertified::Config.raise_exceptions %></td>
   </tr>
   <tr>
     <th><%= t('spree.enable_avatax_address_validation') %>:</th>
-    <td><%= Spree::Avatax::Config.address_validation %></td>
+    <td><%= SolidusAvataxCertified::Config.address_validation %></td>
   </tr>
   <tr>
     <th scope="row">Refuse Checkout if Address Validation Fails</th>
-    <td><%= Spree::Avatax::Config.refuse_checkout_address_validation_error %></td>
+    <td><%= SolidusAvataxCertified::Config.refuse_checkout_address_validation_error %></td>
   </tr>
   <tr>
     <th scope="row">Customer can Validate Address in Checkout</th>
-    <td><%= Spree::Avatax::Config.customer_can_validate %></td>
+    <td><%= SolidusAvataxCertified::Config.customer_can_validate %></td>
   </tr>
   <tr>
     <th><%= t('spree.avatax_address_validation_enabled_countries') %>:</th>
-    <% address_validated_countries = Spree::Avatax::Config.address_validation_enabled_countries %>
+    <% address_validated_countries = SolidusAvataxCertified::Config.address_validation_enabled_countries %>
     <td>
       <% unless address_validated_countries.nil? %>
       <ul style="list-style: inside;">
