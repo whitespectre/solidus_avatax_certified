@@ -4,10 +4,10 @@ AVATAX_HEADERS = { 'X-Avalara-Client' => ENV["AVATAX_CLIENT_ID"] }.freeze
 
 module SolidusAvataxCertified
   class AvataxConfiguration < ::Spree::Preferences::Configuration
-    preference :company_code, :string, default: ENV['AVATAX_COMPANY_CODE']
-    preference :account, :string, default: ENV['AVATAX_ACCOUNT']
-    preference :password, :string, default: ENV['AVATAX_PASSWORD']
-    preference :license_key, :string, default: ENV['AVATAX_LICENSE_KEY']
+    preference :company_code, :string, default: -> { ENV['AVATAX_COMPANY_CODE'] }
+    preference :account, :string, default: -> { ENV['AVATAX_ACCOUNT'] }
+    preference :password, :string, default: -> { ENV['AVATAX_PASSWORD'] }
+    preference :license_key, :string, default: -> { ENV['AVATAX_LICENSE_KEY'] }
     preference :environment, :string, default: -> { default_environment }
     preference :log, :boolean, default: true
     preference :log_to_stdout, :boolean, default: false

@@ -79,5 +79,9 @@ module SolidusAvataxCertified
     def config
       SolidusAvataxCertified::Config
     end
+
+    def logger
+      @logger ||= SolidusAvataxCertified::AvataxLog.new('SolidusAvataxCertified::AvataxClient class')
+    end
   end
 end
