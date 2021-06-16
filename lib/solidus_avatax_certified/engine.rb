@@ -17,6 +17,14 @@ module SolidusAvataxCertified
 
     initializer 'solidus_avatax_certified.init_config' do
       require_relative './config'
+
+      if ::ActiveModel::Type::Boolean.new.cast(ENV['AVATAX_ADDRESS_VALIDATION'])
+        Config.address_validation = true
+        Config.refuse_checkout_address_validation_error = true
+      else
+        Config.address_validation = false
+        Config.refuse_checkout_address_validation_error = false
+      end
     end
 
     config.to_prepare do
